@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
 
@@ -12,37 +14,49 @@
     <div class="container">
         <div class="sidebar">
             <div class="my-info">
+                <div class="photo">
+                    <img src="../img/foto_perfil.jpg" alt="perfil photo" />
+                </div>
                 <div class="details">
                     <div class="name">Gutemberg Silva Filho</div>
                     <div class="job">Web Developer</div>
                 </div>
-                <div class="photo">
-                    <!-- <img src="../img/foto_perfil.jpg" alt="perfil photo"/> -->
-                </div>
             </div>
-            <div class="topics">
-                <ul class="navbar">
-                    <li class="link-name">
-                        <a href="#">About me</a>
-                        <!-- <span class="tooltip">About me</span> -->
-                    </li>
-                    <li class="link-name">
-                        <a href="#">Skills</a>
-                        <!-- <span class="tooltip">About me</span> -->
-                    </li>
-                    <li class="link-name">
-                        <a href="#">Certificates</a>
-                        <!-- <span class="tooltip">About me</span> -->
-                    </li>
-                    <li class="link-name">
-                        <a href="#">Contact</a>
-                        <!-- <span class="tooltip">About me</span> -->
-                    </li>
-                </ul>
-                <div class="sidebar-logo-name">
-                    <div class="sidebar-logo">G</div>
-                    <div class="sidebar-name">port.ID</div>
-                </div>
+            <i class='bx bx-right-arrow-alt' id="menu"></i>
+            <ul class="nav_list">
+                <li>
+                    <a href="#">
+                        <i class='bx bx-user-circle'></i>
+                        <span class="link-name">About me</span>
+                    </a>
+                    <!-- <span class="tooltip">About me</span> -->
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-list-check'></i>
+                        <span class="link-name">Skills</span>
+                    </a>
+                    <!-- <span class="tooltip">About me</span> -->
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-certification'></i>
+                        <span class="link-name"> Certificates</span>
+                    </a>
+                    <!-- <span class="tooltip">About me</span> -->
+                </li>
+                <li>
+
+                    <a href="#">
+                        <i class='bx bxs-contact'></i>
+                        <span class="link-name"> Contact</span>
+                    </a>
+                    <!-- <span class="tooltip">About me</span> -->
+                </li>
+            </ul>
+            <div class="sidebar-logo-name">
+                <div class="sidebar-logo">G</div>
+                <div class="sidebar-name">port.ID</div>
             </div>
         </div>
 
