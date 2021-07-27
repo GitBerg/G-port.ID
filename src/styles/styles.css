@@ -11,10 +11,16 @@
 
 .sidebar{
     position: fixed;
-    width: 240px;
+    width: 70px;
     height: 100%;
     background: #264653;
+    transition: all 0.4s linear;
     }
+
+.sidebar.active{
+    transition: all 0.4s linear;
+    width: 240px;
+}
 
 .sidebar .my-info{
     display: block;
@@ -22,18 +28,23 @@
 }
 
 .sidebar .my-info .details{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 
 .sidebar .my-info .details .name{
     color: #f1faee;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 40px;
     font-weight: 600;
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
 }
 
-
+.sidebar.active .my-info .details .name{
+    opacity: 1;
+}
 .sidebar .my-info .details .job{
     color: #9347ff;
     font-size: 15px;
@@ -43,28 +54,50 @@
     border-radius: 15px;
     margin: 0px 50px;
     padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.active .my-info .details .job{
+    opacity: 1;
 }
 
 .sidebar .my-info .photo img{
     position: relative;
     border-radius: 10px;
-    width: 80px;
-    height: 80px;
+    width: 45px;
+    height: 45px;
     top: 20px;
     border: 2px solid #f1faee;
+    transition: all 0.3s linear;
+}
+
+.sidebar.active .my-info .photo img{
+    width: 80px;
+    height: 80px;
 }
 
 .sidebar ul{
+    margin-top: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.active ul{
     margin-top: 50px;
 }
 
 .sidebar ul li{
     position: relative;
     width: 90%;
-    margin: 15px 10px;
-    height: 50px;
+    margin: 0px 10px;
+    height: 100px;
     list-style: none;
-    line-height: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.active ul li {
+    height: 50px;
 }
 
 .sidebar ul li a{
@@ -73,10 +106,29 @@
     align-items: center;
     border-radius: 5px;
     display: flex;
+    padding: 15px 0px;
     text-decoration: none;
+    margin-right: 13px;
     white-space: nowrap;
-    transition: all 0.3s ease-in;
-    
+    transition: background  0.3s ease-in-out;
+
+}
+
+.sidebar.active ul li a{
+    margin-right: -5px;
+    margin: 15px 0px;
+    padding: 0px 0px;
+}
+
+.sidebar ul li a .link-name{
+    transition: 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active ul li a .link-name{
+    opacity: 1;
+    pointer-events: initial;
 }
 
 .sidebar ul li i{
@@ -90,24 +142,95 @@
 .sidebar ul li a:hover{
     background: #f1faee;
     color: #1d3557;
-    
+
 }
 
-.sidebar #menu{
-    font-size: 35px;
+.sidebar #show-menu{
+    font-size: 30px;
     position: absolute;
     padding: 5px 5px;
     right:-40px;
     top: 50%;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
+    z-index: 1;
     cursor: pointer;
 }
 
-.sidebar #menu:hover{
-    transform: rotateY(180deg);
-    transition: all 0.5s linear;
+.sidebar #show-menu:hover{
+    transform: scale(1.2);
+    transition: all 0.1s linear;
 }
 
+.sidebar.active #show-menu{
+    transition: all 0.2s ease;
+    transform:rotateY(180deg);
+    z-index: 0;
+    opacity: 0;
+}
+
+.sidebar #hide-menu{
+    font-size: 30px;
+    position: absolute;
+    padding: 5px 5px;
+    right:-40px;
+    top: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 0;
+    opacity: 0;
+}
+
+.sidebar.active #hide-menu{
+    opacity: 1;
+    z-index: 1;
+}
+
+.sidebar.active #hide-menu:hover{
+    transform: scale(1.2);
+    transition: all 0.1s linear;
+}
+
+.sidebar .sidebar-logo-name{
+    position: absolute;
+    bottom: 0px;
+    width: 70px;
+    display: flex;
+    background: #9347ff;
+    padding: 15px 0px;
+    border-radius: 5px;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 0.4s linear;
+}
+
+.sidebar.active .sidebar-logo-name{
+    width: 240px;
+}
+
+.sidebar .sidebar-logo-name .sidebar-logo{
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 50px;
+    color: #f1faee;
+    margin-left: 10px;
+    transition: all 0.4s linear;
+}
+.sidebar.active .sidebar-logo-name .sidebar-logo{
+    transform: translateX(100%);
+}
+.sidebar .sidebar-logo-name .sidebar-name{
+    font-family: 'Bebas Neue', cursive;
+    color: #f1faee;
+    font-size: 30px;
+    opacity: 0;
+    transform: translateX(1%);
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar.active .sidebar-logo-name .sidebar-name{
+    opacity: 1;
+    transform: translateX(58%);
+    transition: all 0.5s ease-in-out;
+}
 
 
 
