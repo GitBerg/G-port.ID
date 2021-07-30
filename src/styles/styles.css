@@ -14,6 +14,7 @@
     width: 70px;
     height: 100%;
     background: #264653;
+    background: #293241;
     transition: all 0.4s linear;
     }
 
@@ -47,6 +48,7 @@
 }
 .sidebar .my-info .details .job{
     color: #9347ff;
+    color: #00f5d4;
     font-size: 15px;
     line-height: 15px;
     font-weight: 500;
@@ -55,6 +57,7 @@
     margin: 0px 50px;
     padding: 5px 0;
     white-space: nowrap;
+    text-shadow: 0px 0px 3px #00f5d4;
     opacity: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -78,15 +81,6 @@
     height: 80px;
 }
 
-.sidebar ul{
-    margin-top: 100px;
-    transition: all 0.3s ease-in-out;
-}
-
-.sidebar.active ul{
-    margin-top: 50px;
-}
-
 .sidebar ul li{
     position: relative;
     width: 90%;
@@ -94,6 +88,34 @@
     height: 100px;
     list-style: none;
     transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    white-space: nowrap;
+    background: #9347ff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: #f1faee;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.sidebar ul li a:hover ~ .tooltip{
+    opacity: 1;
+    transform:translateY(-20px);
+}
+
+.sidebar.active ul li a:hover ~ .tooltip{
+    opacity: 0;
+}
+
+.sidebar.active ul li .tooltip{
+    opacity: 0;
 }
 
 .sidebar.active ul li {
@@ -141,7 +163,7 @@
 
 .sidebar ul li a:hover{
     background: #f1faee;
-    color: #1d3557;
+    color: #293241;
 
 }
 
@@ -196,6 +218,7 @@
     width: 70px;
     display: flex;
     background: #9347ff;
+    background: #5a189a;
     padding: 15px 0px;
     border-radius: 5px;
     align-items: center;
@@ -211,7 +234,7 @@
     font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 50px;
     color: #f1faee;
-    margin-left: 10px;
+    margin-left: 13px;
     transition: all 0.4s linear;
 }
 .sidebar.active .sidebar-logo-name .sidebar-logo{
